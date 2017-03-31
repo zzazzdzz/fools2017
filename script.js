@@ -34,7 +34,8 @@ function entities(s){
 }
 
 function getApiEndpoint(name){
-    return "http://89.77.21.72:29717/public/fools2017/" + name + ".php";
+    // Thanks for hosting this stuff for me, hopefully it will survive the load
+    return "https://staszic.space/~jarek/zzazz_fools2017backend/" + name + ".php";
 }
 
 function updateAchievementTooltips(){
