@@ -34,7 +34,7 @@ function entities(s){
 }
 
 function getApiEndpoint(name){
-    return "api/" + name + ".json";
+    return "api/" + name + ".json?_=" + Math.random();
 }
 
 function updateAchievementTooltips(){
