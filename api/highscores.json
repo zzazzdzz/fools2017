@@ -7,6 +7,11 @@
         "achievements": [true, true, true, true, true, true, true]
     }, {
         "score": 31337,
+        "username": "NieDzejkob",
+        "time": [0, 0],
+        "achievements": [true, true, true, true, true, true, true]
+    }, {
+        "score": 31337,
         "username": ".Stranck",
         "time": [0, 0],
         "achievements": [true, true, true, true, true, true, true]
@@ -27,28 +32,18 @@
         "achievements": [true, true, true, true, true, true, true]
     }, {
         "score": 31337,
-        "username": "luckytyphlosion",
-        "time": [0, 0],
-        "achievements": [true, true, true, true, true, true, true]
-    }, {
-        "score": 31337,
         "username": "raining_blood",
         "time": [0, 0],
         "achievements": [true, true, true, true, true, true, true]
     }, {
         "score": 31337,
-        "username": "NieDzejkob",
+        "username": "luckytyphlosion",
         "time": [0, 0],
         "achievements": [true, true, true, true, true, true, true]
     }, {
         "score": 31337,
         "username": "WeedSmoker420",
         "time": [59, 59],
-        "achievements": [true, true, true, true, true, true, true]
-    }, {
-        "score": 31337,
-        "username": "DeliriumNo\u00f9",
-        "time": [0, 0],
         "achievements": [true, true, true, true, true, true, true]
     }, {
         "score": 31337,
@@ -60,6 +55,11 @@
         "username": "krckrckrc",
         "time": [0, 0],
         "achievements": [false, false, false, false, false, false, true]
+    }, {
+        "score": 31337,
+        "username": "DeliriumNo\u00f9",
+        "time": [0, 0],
+        "achievements": [true, true, true, true, true, true, true]
     }, {
         "score": 30000,
         "username": "ChickasaurusGL",
