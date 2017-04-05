@@ -34,8 +34,7 @@ function entities(s){
 }
 
 function getApiEndpoint(name){
-    // Thanks for hosting this stuff for me, hopefully it will survive the load
-    return "https://staszic.space/~jarek/zzazz_fools2017backend/" + name + ".php";
+    return "api/" + name + ".json";
 }
 
 function updateAchievementTooltips(){
@@ -73,6 +72,7 @@ function loadHighscores(){
     var ajax = $.get(getApiEndpoint("highscores"));
     ajax.done(function(data){
         try {
+            if (typeof(data) != "object") data = JSON.parse(data);
             if (data['success']){
                 $('#highscore_loader').hide();
                 data = data['data'];
