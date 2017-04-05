@@ -2,6 +2,11 @@
     "success": 1,
     "data": [{
         "score": 31337,
+        "username": "Froggy25",
+        "time": [0, 0],
+        "achievements": [true, true, true, true, true, true, true]
+    }, {
+        "score": 31337,
         "username": ".Stranck",
         "time": [0, 0],
         "achievements": [true, true, true, true, true, true, true]
@@ -23,6 +28,11 @@
     }, {
         "score": 31337,
         "username": "luckytyphlosion",
+        "time": [0, 0],
+        "achievements": [true, true, true, true, true, true, true]
+    }, {
+        "score": 31337,
+        "username": "raining_blood",
         "time": [0, 0],
         "achievements": [true, true, true, true, true, true, true]
     }, {
@@ -281,11 +291,6 @@
         "time": [5, 27],
         "achievements": [false, true, true, false, false, false, false]
     }, {
-        "score": 18120,
-        "username": "raining_blood",
-        "time": [3, 8],
-        "achievements": [false, false, true, false, false, false, false]
-    }, {
         "score": 17830,
         "username": "PIKABLU",
         "time": [13, 37],
@@ -320,11 +325,6 @@
         "username": "MMMMMMMMMMMMM",
         "time": [9, 4],
         "achievements": [false, true, false, false, true, false, false]
-    }, {
-        "score": 16120,
-        "username": "Froggy25",
-        "time": [3, 8],
-        "achievements": [false, false, false, false, false, false, false]
     }, {
         "score": 16090,
         "username": "OdnetninI",
