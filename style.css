@@ -116,3 +116,8 @@ h2 {
     background: #ffa;
     margin: 0 auto 0 auto;
 }
+
+.message {
+    font-size: 10px;
+    font-weight: bold;
+}

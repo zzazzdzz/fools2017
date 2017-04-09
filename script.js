@@ -85,6 +85,14 @@ function loadHighscores(){
                         row.append($('<td>').text(formatTime(data[i]['time'])));
                         row.append($('<td>').html(createAchievementString(data[i]['achievements'])));
                         $('#highscore_table').append(row);
+                        row = $('<tr>');
+                        if (data[i]['message'].length > 0){
+                            row.append($('<td class="message" colspan="5">').text(data[i]['message']));
+                        }else{
+                            row.append($('<td class="message" colspan="5">')
+                                       .html("<i style='font-weight: normal'>(didn't leave a message)</i>"));
+                        }
+                        $('#highscore_table').append(row);
                     }
                 }else{
                     var row = $('<tr>');
