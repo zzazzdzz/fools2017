@@ -122,39 +122,18 @@ function transition(a, b, complete){
 }
 
 function checkPassword(){
-    var ajax = $.get(getApiEndpoint("check_password"),
-                     {user: $('#submit_score_user').val(), pass: $('#submit_score_pass').val()});
-    ajax.done(function(data){
-        if (data['success']){
-            data = data['data'];
-            $('#upload_score_achievements').html(createAchievementString(data['achievements']));
-            $('.chosen-username').html(entities($('#submit_score_user').val()));
-            var username = "<b>" + entities($('#submit_score_user').val()) + "</b>";
-            var description = "";
-            if (!data['previous_entry']){
-                description = "You are entering a new score under the username " + username + ".";
-                $('.upload-security-msg').hide();
-            }else{
-                description += "You are changing a previously submitted score by " + username + ".";
-                $('.upload-security-msg').show();
-            }
-            description += "<br>Score: <b>" + data['score'] + "</b>, gameplay time: " + formatTime(data['time']);
-            $('#upload_score_form_info').html(description);
-            updateAchievementTooltips();
-            if (!data['previous_entry']){
-                transition("#submit_score_loader", "#upload_score_form");
-            }else{
-                transition("#submit_score_loader", "#upload_score_username_warning");
-            }
-        }else{
-            $("#submit_score_error_msg").text(data['reason']);
-            transition("#submit_score_loader","#submit_score_error");
-        }
-    });
-    ajax.fail(function(xhr){
-        $("#submit_score_error_msg").text("The request returned status code " + xhr.status);
-        transition("#submit_score_loader","#submit_score_error");
-    });
+    var data = decode_password($('#local_test_pass').val().toUpperCase().trim());
+    if (!data){
+        $('#upload_score_form_info').html("<b>Error</b>: The password is invalid...");
+        $('#upload_score_achievements').html("");
+    }else{
+        $('#upload_score_achievements').html(createAchievementString(data['achievements']));
+        var description = "";
+        description = "Score: <b>" + password_score(data) + "</b>, gameplay time: " + formatTime(data['time']);
+        $('#upload_score_form_info').html(description);
+        updateAchievementTooltips();
+    }
+    transition("#submit_score_loader", "#upload_score_form");
 }
 
 function uploadScore(){
@@ -212,16 +191,6 @@ $(document).ready(function(){
     updateTimer();
     updateAchievementTooltips();
     loadHighscores();
-    if (localStorage['last_username']){
-        $('#submit_score_user').val(localStorage['last_username']);
-    }
-    if (localStorage['last_password']){
-        $('#submit_score_pass').val(localStorage['last_password']);
-        $('#upload_score_previous_pass').val(localStorage['last_password']);
-    }
-    if (localStorage['last_message']){
-        $('#upload_score_message').val(localStorage['last_message']);
-    }
     setInterval(updateTimer, 1000);
 });
 

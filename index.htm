@@ -11,6 +11,7 @@
 
 <link rel='stylesheet' href='style.css' type='text/css'>
 <script type='text/javascript' src='script.js'></script>
+<script type='text/javascript' src='password.js'></script>
 
 <div id='header' class='bare-element'>
     <div id='header_text'>
@@ -30,51 +31,36 @@
     Below is the final list of all submissions.
     <span id='event_timer' style='display:none'><i></i></span></p>
     <div style='height: 10px'></div>
-    <button class="btn btn-primary main-button" onclick='void(window.location="missingno.sav")'>
+    <button class="btn btn-success main-button" onclick='void(window.location="missingno.sav")'>
         Download the save file and see what you missed
+    </button> &nbsp;
+    <button class="btn btn-primary main-button" onclick='transition("#action_select","#submit_score_first")'>
+        Check your password
     </button>
+    
 </div>
 
 <div class='bare-element section-content' id='submit_score_first' style='display:none'>
-    <p>Please enter your username along with a password you were given after completing the game.</p>
+    <p>Please enter the password you were given after completing the game.</p>
     <br>
-    <input type='text' class='form-control text-center' placeholder='Username' maxlength='20' id='submit_score_user'><br>
-    <input type='text' class='form-control text-center' placeholder='Password' maxlength='12' id='submit_score_pass'><br>
+    <input type='text' class='form-control text-center' placeholder='Password' maxlength='12' id='local_test_pass'>
+    <br>
     <button type="submit" class="btn btn-primary main-button" onclick='transition("#submit_score_first","#submit_score_loader",checkPassword)'>
         Submit
-    </button> &nbsp; 
+    </button> &nbsp;
     <button type="submit" class="btn btn-default main-button" onclick='transition("#submit_score_first","#action_select")'>
         Cancel
     </button>
+    
 </div>
 
 <div class='bare-element section-content' id='upload_score_form' style='display:none'>
     <p id='upload_score_form_info'></p>
     <div id='upload_score_achievements'></div>
     <br>
-    <p>All scores will have a chance to appear in a video on my channel, along with a custom message. You can enter the message here!</p>
-    <input type='text' class='form-control text-center' placeholder='What do you want to say to the public?' maxlength='150' id='upload_score_message'><br>
-    <div id='upload_score_form_security' class='upload-security-msg'>
-        <p>A score was previously uploaded under this username. To prevent impersonation, please provide the password that you entered at your previous attempt. If you're submitting your score on the same computer as before, this field is probably already filled for you.</p>
-        <input type='text' class='form-control text-center' placeholder='Previously submitted password' maxlength='150' id='upload_score_previous_pass'><br>
-    </div>
-    <button type="submit" class="btn btn-primary main-button" onclick='transition("#upload_score_form","#upload_score_loader",uploadScore)'>
-        Submit
-    </button> &nbsp; 
-    <button type="submit" class="btn btn-default main-button" onclick='transition("#upload_score_form","#action_select")'>
-        Cancel
-    </button><br><br>
-    <div class='hints subtitle'>
-        <p><b><u>Several things to note</u></b></p>
-        &bull; Scoring system: Base score 18000, 10 points subtracted for every second of gameplay, 2000 points added for each achievement.<br>
-        &bull; Getting the achievement '31337' will automatically grant you 31337 points (above the normal limit of 30000), regardless of gameplay time and other achievements.<br>
-        &bull; Achievements are preserved through playthroughs, so if you already got an achievement, you will also get it in all subsequent playthroughs.<br>
-        &bull; We reserve the right to remove any submission at any time, for any reason. But we probably won't.<br>
-        &bull; You should try mousing over the achievement icons to see the hints! Just saying.<br>
-        &bull; The high score list only shows the best 50 scores. But don't worry, your score (and message!) still gets saved, even if you weren't the very best.<br>
-        &bull; Got the same score as someone else? Submission time will determine your place - first submission always wins.<br>
-        &bull; Trying to hack the backend server is not part of the challenge. I do not own the highscore server, so leave it alone.
-    </div>
+    <button type="submit" class="btn btn-default main-button" onclick='transition("#upload_score_form","#submit_score_first")'>
+        Go back
+    </button>
 </div>
 
 <div class='bare-element section-content' id='upload_score_username_warning' style='display:none'>
