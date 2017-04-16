@@ -1,6 +1,12 @@
 {
     "success": 1,
     "data": [{
+        "score": 999999999,
+        "username": "mincrmatt12",
+        "time": [0, 0],
+        "achievements": [true, true, true, true, true, true, true],
+        "message": "Don't make your github public!"
+    }{
         "score": 31337,
         "username": "Froggy25",
         "message": "7.8\/10, too much glitching",
